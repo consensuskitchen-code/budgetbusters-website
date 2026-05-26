@@ -104,13 +104,57 @@
                 <p class="font-bold text-gray-700">© 2026 BudgetBusters App. All rights reserved.</p>
                 <p class="max-w-md">BudgetBusters is a financial visualization interface tool. All account credential aggregation lines are handled natively through end-to-end token handshakes.</p>
             </div>
-            <div class="flex space-x-6 font-medium text-gray-600">
-                <a href="#" class="hover:text-black transition underline">Privacy Policy</a>
-                <a href="#" class="hover:text-black transition underline">Terms of Service</a>
+          <div class="flex space-x-6 font-medium text-gray-600">
+    <a href="javascript:void(0)" onclick="toggleModal('privacy-modal')" class="hover:text-black transition underline">Privacy Policy</a>
+    <a href="javascript:void(0)" onclick="toggleModal('terms-modal')" class="hover:text-black transition underline">Terms of Service</a>
+</div>
                 <a href="#" class="hover:text-black transition underline">Contact Support</a>
             </div>
         </div>
     </footer>
+<div id="privacy-modal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-100 max-h-[80vh] flex flex-col shadow-2xl">
+            <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+                <h3 class="text-lg font-bold text-black">Privacy Policy</h3>
+                <button onclick="toggleModal('privacy-modal')" class="text-gray-400 hover:text-black text-xl font-bold">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-4 text-sm text-gray-600 leading-relaxed">
+                <p class="font-semibold text-gray-900">Effective Date: May 26, 2026</p>
+                <p>BudgetBusters ("we," "our," or "us") respects your digital privacy parameters. This document outlines how data pipelines are isolated and managed within our visualization tools.</p>
+                <h4 class="font-bold text-gray-900">1. Data Collection & Access Limits</h4>
+                <p>BudgetBusters uses industry-standard, read-only API handshakes provided by Plaid Inc. to stream transaction data. We do not access, gather, or store your personal banking credentials, institutional passwords, or multi-factor security data elements.</p>
+                <h4 class="font-bold text-gray-900">2. Data Security Protocols</h4>
+                <p>All temporary tokens are transmitted across secure HTTPS communication lines and encrypted inside our PostgreSQL storage instances using AES-256 bank-grade authorization signatures.</p>
+                <h4 class="font-bold text-gray-900">3. Third-Party Sharing Rules</h4>
+                <p>We do not lease, trade, or distribute your transaction or profile details to third-party marketing networks or external entities.</p>
+            </div>
+        </div>
+    </div>
 
+    <div id="terms-modal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-100 max-h-[80vh] flex flex-col shadow-2xl">
+            <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+                <h3 class="text-lg font-bold text-black">Terms of Service</h3>
+                <button onclick="toggleModal('terms-modal')" class="text-gray-400 hover:text-black text-xl font-bold">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-4 text-sm text-gray-600 leading-relaxed">
+                <p class="font-semibold text-gray-900">Effective Date: May 26, 2026</p>
+                <p>By registering data paths with the BudgetBusters application framework, you explicitly agree to comply with the terms defined herein.</p>
+                <h4 class="font-bold text-gray-900">1. Read-Only Scope of Service</h4>
+                <p>BudgetBusters provides analytical budget tracking data layers. It does not manipulate finances, initialize outbound balance transfers, or alter live institutional structures.</p>
+                <h4 class="font-bold text-gray-900">2. Institutional Identity Consent</h4>
+                <p>You warrant that you are the primary legal administrator or authorized user of any financial account lines linked through our Plaid integration modules.</p>
+                <h4 class="font-bold text-gray-900">3. Limitation of Liability</h4>
+                <p>Data profiles are served strictly for personal expense coaching and informational tracking. BudgetBusters does not serve as a licensed brokerage, investment advisory firm, or formal accounting platform.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
